@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite>
+	<!-- <rule>
+		/danh-muc/nhac-viet-9
+		<from>/danh-muc/(.*)-([0-9]+)-([0-9]+)</from>
+		<to>/danh-muc?id=$2&amp;page=$3</to>
+	</rule> -->
+	
+	
+	
+	<!-- Login fail: in doPost AuthLoginController -->
+	<rule>
+		<from>/login-incorrect</from>
+		<to>/login?msg=0</to>
+	</rule>
+	<!-- Register successful: AuthRegisterController -->
+	<rule>
+		<from>/register-successful</from>
+		<to>/register?msg=1</to>
+	</rule>
+	
+	<!-- Phân trang của trang category -->
+	<rule>
+		<from>/category/(.*)-([0-9]+)-([0-9]+)</from>
+		<to>/category?id=$2&amp;page=$3</to>
+	</rule>
+	<!-- Trang đầu của trang category -->
+	<rule>
+		<from>/category/(.*)-([0-9]+)</from>
+		<to>/category?id=$2</to>
+	</rule>
+	
+	
+	<!-- Phân trang trang public -->
+	<rule>
+		<from>/page/([0-9]+)</from>
+		<to>/?page=$1</to>
+	</rule>
+	
+	
+	<!-- Trang chi tiết của tin -->
+	<rule>
+		<from>/detail/(.*)-([0-9]+)</from>
+		<to>/detail?id=$2</to>
+	</rule>
+	
+	<!-- search?name=a&page=2 -->
+	<!-- <rule>
+		<from>/search/(.*)-([0-9]+)</from>
+		<to>/search?name=$1&amp;page=$2</to>
+	</rule> -->
+
+</urlrewrite>
